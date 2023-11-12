@@ -80,6 +80,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-gen-trusted-multisig
 
 %files		wallet
+%license LICENSE
 %{_bindir}/monero-wallet-cli
 %{_bindir}/monero-wallet-rpc
 

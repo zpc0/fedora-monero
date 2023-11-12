@@ -30,13 +30,13 @@ your finances confidential and secure.
 %package	utils
 Summary:	Monero misc utils
 
-%description
+%description	utils
 Monero CLI misc utils
 
 %package	wallet
 Summary:	Monero wallet
 
-%description
+%description	wallet
 Monero CLI wallet
 
 %prep

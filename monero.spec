@@ -15,11 +15,12 @@ BuildRequires:	gnupg2
 
 BuildRequires:	cmake
 BuildRequires:	gcc
+BuildRequires:	gcc-c++
+BuildRequires:	pkgconf
 BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
-BuildRequires:	pkgconf
 BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
 

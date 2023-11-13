@@ -7,7 +7,7 @@ License:	MIT
 URL:		https://getmonero.org
 Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt
-Source2:	https://github.com/zpc0/fedora-monero/raw/master/binaryFate.gpg
+Source2:	binaryFate.gpg
 
 # for source tarball verification
 BuildRequires:	coreutils

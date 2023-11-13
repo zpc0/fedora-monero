@@ -1,7 +1,7 @@
 Name:		monero
 Version:	0.18.3.1
 Release:	1%{?dist}
-Summary:	Monero the secure, private, untraceable cryptocurrency
+Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
 URL:		https://getmonero.org
@@ -24,7 +24,7 @@ BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
 
 %description
-Monero daemon - Private decentralized cryptocurrency that keeps
+Monero - Private decentralized cryptocurrency that keeps
 your finances confidential and secure.
 
 %package	utils

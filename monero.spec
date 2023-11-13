@@ -23,6 +23,14 @@ BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
 BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
+# for input editing
+BuildRequires:	readline-devel
+# for hardware wallet
+BuildRequires:	hidapi-devel
+BuildRequires:	libusb1-devel
+BuildRequires:	protobuf-compiler
+BuildRequires:	protobuf-devel
+BuildRequires:	systemd-devel
 
 %description
 Monero - Private decentralized cryptocurrency that keeps

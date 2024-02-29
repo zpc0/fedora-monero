@@ -1,6 +1,6 @@
 Name:		monero
 Version:	0.18.3.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -94,5 +94,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
+* Thu Feb 29 2024 zpc <dev@zpc.st>
+- rebuild
 * Fri Nov 10 2023 zpc <dev@zpc.st>
 - initial release.

@@ -1,6 +1,6 @@
 Name:		monero
 Version:	0.18.3.1
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -19,6 +19,7 @@ BuildRequires:	gcc-c++
 BuildRequires:	pkgconf
 BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
+BuildRequires:	miniupnpc-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
 BuildRequires:	unbound-devel
@@ -94,6 +95,8 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
+* Fri Mar 01 2024 zpc <dev@zpc.st>
+- use system miniupnpc
 * Thu Feb 29 2024 zpc <dev@zpc.st>
 - rebuild
 * Fri Nov 10 2023 zpc <dev@zpc.st>

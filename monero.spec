@@ -1,3 +1,6 @@
+# fix build error on F40+
+%global build_type_safety_c 0
+
 Name:		monero
 Version:	0.18.3.1
 Release:	3%{?dist}
@@ -97,6 +100,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Fri Mar 01 2024 zpc <dev@zpc.st>
 - use system miniupnpc
+- fix build error on F40+
 * Thu Feb 29 2024 zpc <dev@zpc.st>
 - rebuild
 * Fri Nov 10 2023 zpc <dev@zpc.st>

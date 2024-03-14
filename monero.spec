@@ -10,7 +10,7 @@ License:	MIT
 URL:		https://getmonero.org
 Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt
-Source2:	binaryFate.gpg
+Source2:	binaryfate.asc
 
 # for source tarball verification
 BuildRequires:	coreutils
@@ -54,7 +54,9 @@ Monero CLI wallet
 
 %prep
 # check PGP signature
-gpgv --keyring %{SOURCE2} %{SOURCE1}
+gpg --import %{SOURCE2}
+gpg --output binaryfate-keyring.gpg --export binaryfate@getmonero.org
+gpgv --keyring binaryfate-keyring.gpg %{SOURCE1}
 
 # calc hashes
 trusted_hash=$(grep monero-source %{SOURCE1} | head -c 64)
@@ -98,6 +100,8 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
+* Thu Mar 14 2024 zpc <dev@zpc.st>
+- use raw PGP key instead of keyring file for verification
 * Fri Mar 01 2024 zpc <dev@zpc.st>
 - use system miniupnpc
 - fix build error on F40+

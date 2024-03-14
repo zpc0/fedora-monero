@@ -2,8 +2,8 @@
 %global build_type_safety_c 0
 
 Name:		monero
-Version:	0.18.3.1
-Release:	3%{?dist}
+Version:	0.18.3.2
+Release:	1%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -102,6 +102,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Thu Mar 14 2024 zpc <dev@zpc.st>
 - use raw PGP key instead of keyring file for verification
+- update to 0.18.3.2
 * Fri Mar 01 2024 zpc <dev@zpc.st>
 - use system miniupnpc
 - fix build error on F40+

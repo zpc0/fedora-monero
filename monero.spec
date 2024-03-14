@@ -56,7 +56,7 @@ Monero CLI wallet
 # check PGP signature
 gpg --import %{SOURCE2}
 gpg --output binaryfate-keyring.gpg --export binaryfate@getmonero.org
-gpgv --keyring binaryfate-keyring.gpg %{SOURCE1}
+gpgv --keyring ./binaryfate-keyring.gpg %{SOURCE1}
 
 # calc hashes
 trusted_hash=$(grep monero-source %{SOURCE1} | head -c 64)

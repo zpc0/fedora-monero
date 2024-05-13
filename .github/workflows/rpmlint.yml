@@ -1,0 +1,15 @@
+name: rpmlint
+run-name: Lint RPM spec file
+on: [push]
+jobs:
+  rpmlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install rpmlint
+        run: |
+          sudo apt-get update
+          sudo apt-get install rpmlint
+      - name: Run rpmlint
+        run: rpmlint monero.spec

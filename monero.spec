@@ -99,7 +99,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Mon May 13 2024 zpc <dev@zpc.st>
 - try to fix runtime error
-* Thu Apr 02 2024 zpc <dev@zpc.st>
+* Tue Apr 02 2024 zpc <dev@zpc.st>
 - update to 0.18.3.3
 * Thu Mar 14 2024 zpc <dev@zpc.st>
 - use raw PGP key instead of keyring file for verification

@@ -1,9 +1,6 @@
-# fix build error on F40+
-%global build_type_safety_c 0
-
 Name:		monero
 Version:	0.18.3.3
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -100,6 +97,8 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
+* Mon May 13 2024 zpc <dev@zpc.st>
+- try to fix runtime error
 * Thu Apr 02 2024 zpc <dev@zpc.st>
 - update to 0.18.3.3
 * Thu Mar 14 2024 zpc <dev@zpc.st>

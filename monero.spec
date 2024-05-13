@@ -1,6 +1,9 @@
+# fix build error on F40+
+%global build_type_safety_c 0
+
 Name:		monero
 Version:	0.18.3.3
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT

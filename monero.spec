@@ -19,7 +19,6 @@ BuildRequires:	gcc-c++
 BuildRequires:	pkgconf
 BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
-BuildRequires:	miniupnpc-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
 BuildRequires:	unbound-devel
@@ -99,6 +98,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Mon May 13 2024 zpc <dev@zpc.st>
 - try to fix runtime error
+- remove unused dependency
 * Tue Apr 02 2024 zpc <dev@zpc.st>
 - update to 0.18.3.3
 * Thu Mar 14 2024 zpc <dev@zpc.st>

@@ -3,7 +3,7 @@
 
 Name:		monero
 Version:	0.18.3.3
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -11,6 +11,8 @@ URL:		https://getmonero.org
 Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt
 Source2:	binaryfate.asc
+
+Patch0:		set-arch.patch
 
 # for source tarball verification
 BuildRequires:	coreutils
@@ -52,6 +54,9 @@ Summary:	Monero wallet
 Monero CLI wallet
 
 %prep
+# print host cpu info
+cat /proc/cpuinfo
+
 # check PGP signature
 gpg --import %{SOURCE2}
 gpg --output binaryfate-keyring.gpg --export binaryfate@getmonero.org
@@ -99,6 +104,9 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
+* Sun May 19 2024 zpc <dev@zpc.st>
+- try to fix runtime error
+- print build host cpu info to debug problems
 * Mon May 13 2024 zpc <dev@zpc.st>
 - try to fix runtime error
 - remove unused dependency

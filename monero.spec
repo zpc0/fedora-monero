@@ -12,6 +12,8 @@ Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt
 Source2:	binaryfate.asc
 
+Patch0:		optimize-o2.patch
+
 # for source tarball verification
 BuildRequires:	coreutils
 BuildRequires:	gnupg2
@@ -104,6 +106,7 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Mon May 20 2024 zpc <dev@zpc.st>
 - remove broken patch
+- set O2 as optimization flag to fix runtime error
 * Sun May 19 2024 zpc <dev@zpc.st>
 - try to fix runtime error
 - print build host cpu info to debug problems

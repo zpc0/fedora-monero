@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # fix build error on F40+
 %global build_type_safety_c 0
 

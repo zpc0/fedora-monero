@@ -1,15 +1,15 @@
-name: rpmlint
-run-name: Lint RPM spec file
+---
+name: Lint RPM spec file
 on: [push]
+permissions: {}
 jobs:
   rpmlint:
     runs-on: ubuntu-latest
+    container: fedora:latest
     steps:
-      - name: Checkout
+      - name: Check out code
         uses: actions/checkout@v4
       - name: Install rpmlint
-        run: |
-          sudo apt-get update
-          sudo apt-get install rpmlint
+        run: sudo dnf install -y rpmlint
       - name: Run rpmlint
         run: rpmlint monero.spec

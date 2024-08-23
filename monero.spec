@@ -105,24 +105,4 @@ install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
 %{_bindir}/monero-wallet-rpc
 
 %changelog
-* Mon May 20 2024 zpc <dev@zpc.st>
-- remove broken patch
-- set O2 as optimization flag to fix runtime error
-* Sun May 19 2024 zpc <dev@zpc.st>
-- try to fix runtime error
-- print build host cpu info to debug problems
-* Mon May 13 2024 zpc <dev@zpc.st>
-- try to fix runtime error
-- remove unused dependency
-* Tue Apr 02 2024 zpc <dev@zpc.st>
-- update to 0.18.3.3
-* Thu Mar 14 2024 zpc <dev@zpc.st>
-- use raw PGP key instead of keyring file for verification
-- update to 0.18.3.2
-* Fri Mar 01 2024 zpc <dev@zpc.st>
-- use system miniupnpc
-- fix build error on F40+
-* Thu Feb 29 2024 zpc <dev@zpc.st>
-- rebuild
-* Fri Nov 10 2023 zpc <dev@zpc.st>
-- initial release.
+%autochangelog

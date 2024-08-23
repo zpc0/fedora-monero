@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.3.4
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	MIT
@@ -27,6 +27,10 @@ BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
+# Boost uses OpenSSL engine, which removed from openssl-devel (F41+)
+%if 0%{?fedora} >= 41
+BuildRequires:	openssl-devel-engine
+%endif
 BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
 # for input editing

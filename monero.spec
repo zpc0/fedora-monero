@@ -78,11 +78,12 @@ fi
 %autosetup -n %{name}-source-v%{version}
 
 %build
-%make_build release
+%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%cmake_build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
-install -m 0755 build/release/bin/* %{buildroot}%{_bindir}/
+install -m 0755 %{_vpath_builddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE

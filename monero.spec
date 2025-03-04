@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: BSD-3-Clause
 # fix build error on F40+
 %global build_type_safety_c 0
 
@@ -7,7 +7,7 @@ Version:	0.18.3.4
 Release:	3%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
-License:	MIT
+License:	BSD-3-Clause
 URL:		https://getmonero.org
 Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt

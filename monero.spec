@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.3.4
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -79,7 +79,7 @@ fi
 %autosetup -n %{name}-source-v%{version}
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF -DNO_AES=ON
 %cmake_build
 
 %install

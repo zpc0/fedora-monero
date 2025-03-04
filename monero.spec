@@ -63,8 +63,7 @@ Monero CLI wallet
 cat /proc/cpuinfo
 
 # check PGP signature
-gpg --import %{SOURCE2}
-gpg --output binaryfate-keyring.gpg --export binaryfate@getmonero.org
+gpg --dearmor --output binaryfate-keyring.gpg %{SOURCE2}
 gpgv --keyring ./binaryfate-keyring.gpg %{SOURCE1}
 
 # calc hashes

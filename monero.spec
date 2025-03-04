@@ -20,6 +20,7 @@ BuildRequires:	coreutils
 BuildRequires:	gnupg2
 
 BuildRequires:	cmake
+BuildRequires:	ninja-build
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	pkgconf
@@ -78,7 +79,7 @@ fi
 %autosetup -n %{name}-source-v%{version}
 
 %build
-%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo
 %cmake_build
 
 %install

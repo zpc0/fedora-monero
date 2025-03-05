@@ -60,9 +60,6 @@ Summary:	Monero wallet
 Monero CLI wallet
 
 %prep
-# print host cpu info
-cat /proc/cpuinfo
-
 # check PGP signature
 gpg --dearmor --output binaryfate-keyring.gpg %{SOURCE2}
 gpgv --keyring ./binaryfate-keyring.gpg %{SOURCE1}

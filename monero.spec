@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.3.4
-Release:	7%{?dist}
+Release:	8%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause

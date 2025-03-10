@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.3.4
-Release:	8%{?dist}
+Release:	9%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -12,6 +12,10 @@ URL:		https://getmonero.org
 Source0:	https://downloads.getmonero.org/cli/%{name}-source-v%{version}.tar.bz2
 Source1:	https://www.getmonero.org/downloads/hashes.txt
 Source2:	binaryfate.asc
+Source3:	jeffro256.asc
+# from https://github.com/Boog900/monero-ban-list/
+Source4:	ban_list.txt
+Source5:	jeffro256.sig
 
 Patch0:		optimize-o2.patch
 
@@ -74,6 +78,10 @@ if ! [ $trusted_hash = $archive_hash ]; then
 	exit 1
 fi
 
+# check ban list signature
+gpg --dearmor --output ./jeffro256-keyring.gpg %{SOURCE3}
+gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
+
 %autosetup -n %{name}-source-v%{version}
 
 %build
@@ -86,10 +94,15 @@ export CMAKE_POLICY_VERSION_MINIMUM=3.5
 %install
 mkdir -p %{buildroot}%{_bindir}
 install -m 0755 %{_vpath_builddir}/bin/* %{buildroot}%{_bindir}/
+# install MRL recommended ban list
+# https://github.com/monero-project/meta/issues/1124
+mkdir -p %{buildroot}%{_datadir}/monero
+install -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/monero/
 
 %files
 %license LICENSE
 %{_bindir}/monerod
+%{_datadir}/monero/ban_list.txt
 
 %files		utils
 %license LICENSE

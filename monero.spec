@@ -3,7 +3,7 @@
 %global build_type_safety_c 0
 
 Name:		monero
-Version:	0.18.4.0
+Version:	0.18.4.1
 Release:	1%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
@@ -32,10 +32,8 @@ BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
-# Boost uses OpenSSL engine, which removed from openssl-devel (F41+)
-%if 0%{?fedora} >= 41
+# Boost uses OpenSSL engine, which removed from openssl-devel
 BuildRequires:	openssl-devel-engine
-%endif
 BuildRequires:	unbound-devel
 BuildRequires:	miniupnpc-devel
 BuildRequires:	zeromq-devel

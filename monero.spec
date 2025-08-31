@@ -3,8 +3,8 @@
 %global build_type_safety_c 0
 
 Name:		monero
-Version:	0.18.4.1
-Release:	3%{?dist}
+Version:	0.18.4.2
+Release:	1%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -23,6 +23,7 @@ Patch0:		optimize-o2.patch
 BuildRequires:	coreutils
 BuildRequires:	gnupg2
 
+BuildRequires:	bzip2
 BuildRequires:	cmake
 BuildRequires:	ninja-build
 BuildRequires:	gcc

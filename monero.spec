@@ -3,7 +3,7 @@
 %global build_type_safety_c 0
 
 Name:		monero
-Version:	0.18.4.2
+Version:	0.18.4.3
 Release:	1%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 

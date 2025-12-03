@@ -10,7 +10,6 @@ on:
     secrets:
       uuid:
         required: true
-        type: string
 
 jobs:
   webhook:

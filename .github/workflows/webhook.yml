@@ -1,0 +1,21 @@
+---
+name: WebHook for package build
+permissions: {}
+on:
+  workflow_call:
+    inputs:
+      package-name:
+        required: true
+        type: string
+    secrets:
+      uuid:
+        required: true
+        type: string
+
+jobs:
+  webhook:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Send POST
+        run: curl -X POST "https://copr.fedorainfracloud.org/webhooks/custom/106505/${{ secrets.uuid }}/${{ inputs.package-name }}/"
+

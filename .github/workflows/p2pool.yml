@@ -1,0 +1,16 @@
+---
+name: Build p2pool
+permissions: {}
+on:
+  push:
+    paths:
+      - 'p2pool/**'
+
+jobs:
+  call-webhook:
+    uses: zpc0/fedora-monero/.github/workflows/webhook.yml@master
+    with:
+      package-name: p2pool
+    secrets:
+      uuid: ${{ secrets.UUID }}
+

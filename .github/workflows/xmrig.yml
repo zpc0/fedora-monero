@@ -1,0 +1,16 @@
+---
+name: Build xmrig
+permissions: {}
+on:
+  push:
+    paths:
+      - 'xmrig/**'
+
+jobs:
+  call-webhook:
+    uses: zpc0/fedora-monero/.github/workflows/webhook.yml@master
+    with:
+      package-name: xmrig
+    secrets:
+      uuid: ${{ secrets.UUID }}
+

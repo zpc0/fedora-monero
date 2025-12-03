@@ -1,0 +1,16 @@
+---
+name: Build monero
+permissions: {}
+on:
+  push:
+    paths:
+      - 'monero/**'
+
+jobs:
+  call-webhook:
+    uses: zpc0/fedora-monero/.github/workflows/webhook.yml@master
+    with:
+      package-name: monero
+    secrets:
+      uuid: ${{ secrets.UUID }}
+

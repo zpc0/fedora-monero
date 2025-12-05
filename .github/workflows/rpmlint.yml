@@ -1,0 +1,26 @@
+---
+name: RPMLint
+run-name: Check RPM spec files
+permissions: {}
+
+on:
+  push:
+    paths:
+      - '**.spec'
+
+jobs:
+  rpmlint:
+    runs-on: ubuntu-slim
+    container: fedora:latest
+    steps:
+      - name: Install RPMLint
+        run: sudo dnf install -y rpmlint
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Check Monero spec file
+        run: rpmlint monero/monero.spec
+      - name: Check P2Pool spec file
+        run: rpmlint p2pool/p2pool.spec
+      - name: Check XMRig spec file
+        run: rpmlint xmrig/xmrig.spec
+

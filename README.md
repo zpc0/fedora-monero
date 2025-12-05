@@ -1,4 +1,4 @@
-# Monero package repository for Fedora
+# Monero unofficial package repository for Fedora
 
 ## Included Softwares
 

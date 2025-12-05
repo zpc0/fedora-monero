@@ -1,10 +1,10 @@
 ---
-name: Build monero
+name: Build Monero package
 permissions: {}
 on:
   push:
     paths:
-      - 'monero/**'
+      - 'monero/monero.spec'
 
 jobs:
   call-webhook:

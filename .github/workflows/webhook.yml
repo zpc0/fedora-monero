@@ -1,5 +1,5 @@
 ---
-name: WebHook for package build
+name: Fedora Copr Webhook
 permissions: {}
 on:
   workflow_call:

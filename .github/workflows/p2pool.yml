@@ -1,10 +1,10 @@
 ---
-name: Build p2pool
+name: Build P2Pool package
 permissions: {}
 on:
   push:
     paths:
-      - 'p2pool/**'
+      - 'p2pool/p2pool.spec'
 
 jobs:
   call-webhook:

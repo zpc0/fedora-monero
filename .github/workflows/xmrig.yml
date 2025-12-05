@@ -1,10 +1,10 @@
 ---
-name: Build xmrig
+name: Build XMRig package
 permissions: {}
 on:
   push:
     paths:
-      - 'xmrig/**'
+      - 'xmrig/xmrig.spec'
 
 jobs:
   call-webhook:

@@ -12,7 +12,7 @@ on:
 jobs:
   rpmlint:
     runs-on: ubuntu-latest
-    container: fedora:latest
+    container: quay.io/fedora/fedora:latest
     steps:
       - name: Install RPMLint
         run: sudo dnf install -y rpmlint

@@ -17,6 +17,7 @@ Source3:	jeffro256.asc
 Source4:	ban_list.txt
 Source5:	jeffro256.sig
 Source6:	monerod.conf
+Source7:	monerod.service
 
 Patch0:		optimize-o2.patch
 
@@ -47,6 +48,7 @@ BuildRequires:	libusb1-devel
 BuildRequires:	protobuf-compiler
 BuildRequires:	protobuf-devel
 BuildRequires:	systemd-devel
+BuildRequires:	systemd-rpm-macros
 
 %description
 Monero - Private decentralized cryptocurrency that keeps
@@ -99,12 +101,14 @@ install -m 0755 %{_vpath_builddir}/bin/* %{buildroot}%{_bindir}/
 mkdir -p %{buildroot}%{_datadir}/monero
 install -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/monero/
 install -m 0644 %{SOURCE6} %{buildroot}%{_datadir}/monero/
+install -m 0644 %{SOURCE7} %{buildroot}%{_unitdir}/
 
 %files
 %license LICENSE
 %{_bindir}/monerod
 %{_datadir}/monero/ban_list.txt
 %{_datadir}/monero/monerod.conf
+%{_unitdir}/monerod.service
 
 %files		utils
 %license LICENSE

@@ -1,0 +1,29 @@
+# Systemd service for monerod
+[Unit]
+Description=Monero daemon
+After=network-online.target
+RequiresMountsFor=/var/lib/monero
+
+[Service]
+ExecStart=/usr/bin/monerod --config-file /etc/monero/monerod.conf
+Type=exec
+Restart=on-failure
+RestartSec=30
+DynamicUser=True
+NoNewPrivileges=True
+KeyringMode=private
+ProtectSystem=full
+ProtectHome=True
+PrivateTmp=True
+PrivateDevices=True
+PrivatePIDs=True
+ProtectHostname=True
+ProtectClock=True
+ProtectKernelTunables=True
+ProtectKernelModules=True
+ProtectKernelLogs=True
+ProtectControlGroups=True
+
+[Install]
+WantedBy=multi-user.target
+

@@ -16,6 +16,7 @@ Source3:	jeffro256.asc
 # from https://github.com/Boog900/monero-ban-list/
 Source4:	ban_list.txt
 Source5:	jeffro256.sig
+Source6:	monerod.conf
 
 Patch0:		optimize-o2.patch
 
@@ -97,11 +98,13 @@ install -m 0755 %{_vpath_builddir}/bin/* %{buildroot}%{_bindir}/
 # https://github.com/monero-project/meta/issues/1124
 mkdir -p %{buildroot}%{_datadir}/monero
 install -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/monero/
+install -m 0644 %{SOURCE6} %{buildroot}%{_datadir}/monero/
 
 %files
 %license LICENSE
 %{_bindir}/monerod
 %{_datadir}/monero/ban_list.txt
+%{_datadir}/monero/monerod.conf
 
 %files		utils
 %license LICENSE

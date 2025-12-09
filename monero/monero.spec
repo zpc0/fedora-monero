@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.4.4
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -90,7 +90,7 @@ gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
 # enforce minimum CMake version
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
 
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF -DNO_AES=ON
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF
 %cmake_build
 
 %install

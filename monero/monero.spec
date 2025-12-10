@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.4.4
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -94,13 +94,14 @@ export CMAKE_POLICY_VERSION_MINIMUM=3.5
 %cmake_build
 
 %install
-mkdir -p %{buildroot}%{_bindir}
+install -d %{buildroot}%{_bindir}
 install -m 0755 %{_vpath_builddir}/bin/* %{buildroot}%{_bindir}/
 # install MRL recommended ban list
 # https://github.com/monero-project/meta/issues/1124
-mkdir -p %{buildroot}%{_datadir}/monero
+install -d %{buildroot}%{_datadir}/monero
 install -m 0644 %{SOURCE4} %{buildroot}%{_datadir}/monero/
 install -m 0644 %{SOURCE6} %{buildroot}%{_datadir}/monero/
+install -d %{buildroot}%{_unitdir}
 install -m 0644 %{SOURCE7} %{buildroot}%{_unitdir}/
 
 %files

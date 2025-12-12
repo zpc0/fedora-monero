@@ -9,7 +9,9 @@ ExecStart=/usr/bin/monerod --config-file /etc/monero/monerod.conf
 Type=exec
 Restart=on-failure
 RestartSec=30
-DynamicUser=True
+User=monero
+Group=monero
+
 NoNewPrivileges=True
 KeyringMode=private
 ProtectSystem=full

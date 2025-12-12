@@ -4,7 +4,7 @@
 
 Name:		monero
 Version:	0.18.4.4
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Monero - the secure, private, untraceable cryptocurrency
 
 License:	BSD-3-Clause
@@ -40,15 +40,9 @@ BuildRequires:	openssl-devel-engine
 BuildRequires:	unbound-devel
 BuildRequires:	miniupnpc-devel
 BuildRequires:	zeromq-devel
+BuildRequires:	systemd-rpm-macros
 # for input editing
 BuildRequires:	readline-devel
-# for hardware wallet
-BuildRequires:	hidapi-devel
-BuildRequires:	libusb1-devel
-BuildRequires:	protobuf-compiler
-BuildRequires:	protobuf-devel
-BuildRequires:	systemd-devel
-BuildRequires:	systemd-rpm-macros
 
 %description
 Monero - Private decentralized cryptocurrency that keeps
@@ -90,7 +84,7 @@ gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
 # enforce minimum CMake version
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
 
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF -DUSE_DEVICE_TREZOR=OFF
 %cmake_build
 
 %install

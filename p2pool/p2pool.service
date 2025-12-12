@@ -1,0 +1,31 @@
+# Systemd service for p2pool
+[Unit]
+Description=P2Pool daemon
+After=network-online.target
+RequiresMountsFor=/var/lib/p2pool
+
+[Service]
+ExecStart=/usr/bin/p2pool --params-file /etc/monero/p2pool.conf
+Type=exec
+Restart=on-failure
+RestartSec=30
+User=monero
+Group=monero
+
+NoNewPrivileges=True
+KeyringMode=private
+ProtectSystem=full
+ProtectHome=True
+PrivateTmp=True
+PrivateDevices=True
+PrivatePIDs=True
+ProtectHostname=True
+ProtectClock=True
+ProtectKernelTunables=True
+ProtectKernelModules=True
+ProtectKernelLogs=True
+ProtectControlGroups=True
+
+[Install]
+WantedBy=multi-user.target
+

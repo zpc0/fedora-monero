@@ -1,7 +1,7 @@
 # Systemd service for monerod
 [Unit]
 Description=Monero daemon
-After=network-online.target
+After=network-online.target tor.service
 RequiresMountsFor=/var/lib/monero
 
 [Service]

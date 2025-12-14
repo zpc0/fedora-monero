@@ -6,7 +6,7 @@ RequiresMountsFor=/var/lib/p2pool
 
 [Service]
 EnvironmentFile=/etc/monero/p2pool.conf
-ExecStart=/usr/bin/p2pool --wallet ${wallet} --rpc-port ${rpc-port} --stratum ${stratum} --data-dir ${data-dir} --${pool}
+ExecStart=/usr/bin/p2pool --wallet ${wallet} --rpc-port ${rpcport} --stratum ${stratum} --data-dir ${datadir} --${pool}
 Type=exec
 Restart=on-failure
 RestartSec=30

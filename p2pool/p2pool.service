@@ -5,7 +5,8 @@ After=network-online.target monerod.service
 RequiresMountsFor=/var/lib/p2pool
 
 [Service]
-ExecStart=/usr/bin/p2pool --params-file /etc/monero/p2pool.conf
+EnvironmentFile=/etc/monero/p2pool.conf
+ExecStart=/usr/bin/p2pool --wallet ${wallet} --rpc-port ${rpc-port} --stratum ${stratum} --data-dir ${data-dir} --${pool}
 Type=exec
 Restart=on-failure
 RestartSec=30

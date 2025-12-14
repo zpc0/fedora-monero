@@ -3,7 +3,7 @@
 
 Name:		p2pool
 Version:	4.12
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only

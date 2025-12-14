@@ -1,8 +1,33 @@
 # Monero unofficial package repository for Fedora
-## How to enable repo
+![rpmlint status](https://img.shields.io/github/actions/workflow/status/zpc0/fedora-monero/rpmlint.yml?label=rpmlint)
+
+## How to enable this repo
 ```
 sudo dnf copr enable zpc00/monero
 ```
+
+## How to setup
+1. Create required user and directories
+```
+sudo useradd --system monero
+sudo mkdir /var/lib/{monero,p2pool}
+sudo chown monero:monero /var/lib/monero
+sudo chown monero:monero /var/lib/p2pool
+```
+2. Install softwares
+3. Add config files
+```
+sudo mkdir /etc/monero
+sudo cp /usr/share/monero/monero.conf /etc/monero/
+sudo cp /usr/share/p2pool/p2pool.conf /etc/monero/
+sudoedit /etc/monero/p2pool.conf
+```
+4. Run
+```
+sudo systemctl start monerod.service
+sudo systemctl start p2pool.service
+```
+
 ## Included Softwares
 
 ### Monero

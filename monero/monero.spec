@@ -5,7 +5,7 @@
 Name:		monero
 Version:	0.18.4.4
 Release:	6%{?dist}
-Summary:	Monero - the secure, private, untraceable cryptocurrency
+Summary:	Monero software
 
 License:	BSD-3-Clause
 URL:		https://getmonero.org
@@ -45,8 +45,7 @@ BuildRequires:	systemd-rpm-macros
 BuildRequires:	readline-devel
 
 %description
-Monero - Private decentralized cryptocurrency that keeps
-your finances confidential and secure.
+Monero software
 
 %package	utils
 Summary:	Monero misc utils

@@ -5,13 +5,14 @@ After=network-online.target tor.service
 RequiresMountsFor=/var/lib/monero
 
 [Service]
-ExecStart=/usr/bin/monerod --config-file /etc/monero/monerod.conf
+ExecStart=/usr/bin/monerod --non-interactive --config-file /etc/monero/monerod.conf
 Type=exec
 Restart=on-failure
 RestartSec=30
 User=monero
 Group=monero
 
+ProtectProc=invisible
 NoNewPrivileges=True
 KeyringMode=private
 ProtectSystem=full

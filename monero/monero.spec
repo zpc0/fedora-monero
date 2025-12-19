@@ -2,13 +2,13 @@
 # fix build error on F40+
 %global build_type_safety_c 0
 
-%undefine _enable_debug_packages
+%global debug_package %{nil}
 
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
 Version:	0.18.4.4
-Release:	10%{?dist}
+Release:	11%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause

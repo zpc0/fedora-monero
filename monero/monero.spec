@@ -4,13 +4,13 @@
 
 %undefine _enable_debug_packages
 
-%_pkg_extra_cflags -fno-delete-null-pointer-checks -ftrivial-auto-var-init
-%_pkg_extra_cxxflags -fno-delete-null-pointer-checks -ftrivial-auto-var-init
-%_pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
+%global _pkg_extra_cflags -fno-delete-null-pointer-checks -ftrivial-auto-var-init
+%global _pkg_extra_cxxflags -fno-delete-null-pointer-checks -ftrivial-auto-var-init
+%global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
 Version:	0.18.4.4
-Release:	8%{?dist}
+Release:	9%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause

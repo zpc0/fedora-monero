@@ -1,9 +1,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-%global debug_package %{nil}
+%undefine _enable_debug_packages
+
+%global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		p2pool
 Version:	4.12
-Release:	6%{?dist}
+Release:	7%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only

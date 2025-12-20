@@ -8,7 +8,7 @@
 
 Name:		monero
 Version:	0.18.4.4
-Release:	11%{?dist}
+Release:	12%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -28,6 +28,7 @@ Patch0:		optimize-o2.patch
 # for source tarball verification
 BuildRequires:	coreutils
 BuildRequires:	gnupg2
+BuildRequires:	gpgverify
 
 BuildRequires:	bzip2
 BuildRequires:	cmake

@@ -5,7 +5,7 @@
 
 Name:		p2pool
 Version:	4.13
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
@@ -19,6 +19,7 @@ Source4:	p2pool.service
 # for source tarball verification
 BuildRequires:	coreutils
 BuildRequires:	gnupg2
+BuildRequires:	gpgverify
 
 BuildRequires:	cmake
 BuildRequires:	ninja-build

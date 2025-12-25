@@ -1,9 +1,11 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 %global debug_package %{nil}
 
+%global _pkg_extra_ldflags -Wl,-z,nodlopen
+
 Name:		xmrig
-Version:	6.24.0
-Release:	5%{?dist}
+Version:	6.25.0
+Release:	1%{?dist}
 Summary:	unified CPU/GPU miner
 
 License:	GPL-3.0-or-later

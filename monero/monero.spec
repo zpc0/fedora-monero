@@ -2,13 +2,11 @@
 # fix build error on F40+
 %global build_type_safety_c 0
 
-%global debug_package %{nil}
-
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
 Version:	0.18.4.4
-Release:	12%{?dist}
+Release:	13%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -88,7 +86,7 @@ gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
 # enforce minimum CMake version
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
 
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF -DUSE_DEVICE_TREZOR=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DUSE_CCACHE=OFF -DBUILD_DOCUMENTATION=OFF -DBUILD_DEBUG_UTILITIES=OFF -DBUILD_SHARED_LIBS=OFF -DSTACK_TRACE=OFF -DUSE_DEVICE_TREZOR=OFF
 %cmake_build
 
 %install

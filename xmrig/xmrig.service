@@ -1,0 +1,24 @@
+# Systemd service for XMRig
+[Unit]
+Description=XMRig miner
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/monero/xmrig.conf
+ExecStart=/usr/bin/xmrig ${XMRIG_ARGS}
+Type=exec
+Restart=on-failure
+RestartSec=30
+
+KeyringMode=private
+ProtectHome=True
+PrivateTmp=True
+PrivatePIDs=True
+ProtectHostname=True
+ProtectClock=True
+ProtectKernelLogs=True
+ProtectControlGroups=True
+
+[Install]
+WantedBy=multi-user.target
+

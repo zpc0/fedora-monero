@@ -5,8 +5,8 @@
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
-Version:	0.18.4.4
-Release:	13%{?dist}
+Version:	0.18.4.5
+Release:	1%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause

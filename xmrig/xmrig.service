@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 EnvironmentFile=/etc/monero/xmrig.conf
-ExecStart=/usr/bin/xmrig ${XMRIG_ARGS}
+ExecStart=/usr/bin/xmrig --no-color --no-title -o $XMRIG_SERVER $XMRIG_ARGS
 Type=exec
 Restart=on-failure
 RestartSec=30

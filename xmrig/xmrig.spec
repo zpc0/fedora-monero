@@ -5,8 +5,8 @@
 
 Name:		xmrig
 Version:	6.25.0
-Release:	2%{?dist}
-Summary:	unified CPU/GPU miner
+Release:	3%{?dist}
+Summary:	unified CPU miner
 
 License:	GPL-3.0-or-later
 URL:		https://xmrig.com

@@ -4,8 +4,8 @@
 %global _pkg_extra_ldflags -Wl,-z,nodlopen
 
 Name:		xmrig
-Version:	6.25.0
-Release:	3%{?dist}
+Version:	6.26.0
+Release:	1%{?dist}
 Summary:	unified CPU miner
 
 License:	GPL-3.0-or-later

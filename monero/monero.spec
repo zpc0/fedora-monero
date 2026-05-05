@@ -41,7 +41,6 @@ BuildRequires:	openssl-devel
 # Boost uses OpenSSL engine, which removed from openssl-devel
 BuildRequires:	openssl-devel-engine
 BuildRequires:	unbound-devel
-BuildRequires:	miniupnpc-devel
 BuildRequires:	zeromq-devel
 BuildRequires:	systemd-rpm-macros
 # for input editing

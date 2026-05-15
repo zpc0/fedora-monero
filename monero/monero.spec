@@ -5,7 +5,7 @@
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
-Version:	0.18.4.6
+Version:	0.18.5.0
 Release:	1%{?dist}
 Summary:	Monero software
 

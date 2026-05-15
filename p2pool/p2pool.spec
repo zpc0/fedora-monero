@@ -5,7 +5,7 @@
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		p2pool
-Version:	4.15
+Version:	4.15.1
 Release:	1%{?dist}
 Summary:	Decentralized pool for Monero mining
 

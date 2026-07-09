@@ -2,11 +2,13 @@
 # fix build error on F40+
 %global build_type_safety_c 0
 
+%global _pkg_extra_cflags -DOPENSSL_NO_ENGINE
+%global _pkg_extra_cxxflags -DOPENSSL_NO_ENGINE
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		monero
 Version:	0.18.5.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -38,8 +40,6 @@ BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	openpgm-devel
 BuildRequires:	openssl-devel
-# Boost uses OpenSSL engine, which removed from openssl-devel
-BuildRequires:	openssl-devel-engine
 BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
 BuildRequires:	systemd-rpm-macros

@@ -1,5 +1,5 @@
---- a/contrib/epee/include/net/net_ssl.h
-+++ b/contrib/epee/include/net/net_ssl.h
+--- contrib/epee/include/net/net_ssl.h
++++ contrib/epee/include/net/net_ssl.h
 @@ -39,6 +39,7 @@
  #include <boost/asio/ssl.hpp>
  #include <boost/filesystem/path.hpp>
@@ -16,8 +16,8 @@
  	bool create_rsa_ssl_certificate(EVP_PKEY *&pkey, X509 *&cert);
  
    /**
---- a/contrib/epee/src/net_ssl.cpp
-+++ b/contrib/epee/src/net_ssl.cpp
+--- contrib/epee/src/net_ssl.cpp
++++ contrib/epee/src/net_ssl.cpp
 @@ -65,14 +65,7 @@ static void add_windows_root_certs(SSL_CTX *ctx) noexcept;
  
  namespace

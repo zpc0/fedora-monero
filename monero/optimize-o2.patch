@@ -1,5 +1,5 @@
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- CMakeLists.txt
++++ CMakeLists.txt
 @@ -340,3 +340,3 @@
  else()
 -  set(OPT_FLAGS_RELEASE "-Ofast")

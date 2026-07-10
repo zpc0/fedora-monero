@@ -8,7 +8,7 @@
 
 Name:		monero
 Version:	0.18.5.1
-Release:	3%{?dist}
+Release:	4%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause

@@ -1,20 +1,3 @@
-From aa3abe2c031f19b25d381cceab154b53091df4ac Mon Sep 17 00:00:00 2001
-From: jeffro256 <jeffro256@tutanota.com>
-Date: Mon, 16 May 2022 13:19:17 -0500
-Subject: [PATCH] net_ssl: Use EVP API to create EVP_PKEYs when available
-
-The following functions are deprecated in OpenSSL 3.0 and used in net_ssl.cpp: `RSA_free`, `EC_KEY_free`, `RSA_new`, `RSA_generate_key_ex`, `EC_KEY_set_group`, `EC_KEY_generate_key`.
-
-Since EVP_RSA_gen was added in OpenSSL 3.0 and since the aforementioned functions were deprecated in OpenSSL 3.0, I check if the OpenSSL version >= 3.0, and use EVP_RSA_gen instead of everything else up to assigning the private key to the certificate in `create_rsa_ssl_certificate`.
-
-I also deleted `create_ec_ssl_certificate` since it wasn't used.
----
- contrib/epee/include/net/net_ssl.h |   2 +-
- contrib/epee/src/net_ssl.cpp       | 217 +++++++----------------------
- 2 files changed, 51 insertions(+), 168 deletions(-)
-
-diff --git a/contrib/epee/include/net/net_ssl.h b/contrib/epee/include/net/net_ssl.h
-index 5fd14b65da5..807a306ffb3 100644
 --- a/contrib/epee/include/net/net_ssl.h
 +++ b/contrib/epee/include/net/net_ssl.h
 @@ -39,6 +39,7 @@
@@ -33,8 +16,6 @@ index 5fd14b65da5..807a306ffb3 100644
  	bool create_rsa_ssl_certificate(EVP_PKEY *&pkey, X509 *&cert);
  
    /**
-diff --git a/contrib/epee/src/net_ssl.cpp b/contrib/epee/src/net_ssl.cpp
-index 69cc1cce73c..cfbcd95a555 100644
 --- a/contrib/epee/src/net_ssl.cpp
 +++ b/contrib/epee/src/net_ssl.cpp
 @@ -65,14 +65,7 @@ static void add_windows_root_certs(SSL_CTX *ctx) noexcept;

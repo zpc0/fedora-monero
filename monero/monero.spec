@@ -8,7 +8,7 @@
 
 Name:		monero
 Version:	0.18.5.1
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -24,6 +24,7 @@ Source6:	monerod.conf
 Source7:	monerod.service
 
 Patch0:		optimize-o2.patch
+Patch1:		openssl-api.patch
 
 # for source tarball verification
 BuildRequires:	coreutils

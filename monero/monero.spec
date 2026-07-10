@@ -8,7 +8,7 @@
 
 Name:		monero
 Version:	0.18.5.1
-Release:	4%{?dist}
+Release:	5%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -80,7 +80,9 @@ fi
 gpg --dearmor --output ./jeffro256-keyring.gpg %{SOURCE3}
 gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
 
-%autosetup -n %{name}-source-v%{version}
+%setup -q -n %{name}-source-v%{version}
+%patch 0
+%patch 1
 
 %build
 # enforce minimum CMake version

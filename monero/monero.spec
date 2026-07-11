@@ -8,7 +8,7 @@
 
 Name:		monero
 Version:	0.18.5.1
-Release:	7%{?dist}
+Release:	8%{?dist}
 Summary:	Monero software
 
 License:	BSD-3-Clause
@@ -24,7 +24,6 @@ Source6:	monerod.conf
 Source7:	monerod.service
 
 Patch0:		optimize-o2.patch
-Patch1:		openssl-api.patch
 
 # for source tarball verification
 BuildRequires:	coreutils
@@ -40,7 +39,12 @@ BuildRequires:	pkgconf
 BuildRequires:	boost-devel
 BuildRequires:	libsodium-devel
 BuildRequires:	openpgm-devel
+# use OpenSSL v3.x for F45+
+%if 0%{?fedora} >= 45
+BuildRequires:	openssl3-devel
+%else
 BuildRequires:	openssl-devel
+%endif
 BuildRequires:	unbound-devel
 BuildRequires:	zeromq-devel
 BuildRequires:	systemd-rpm-macros
@@ -82,7 +86,6 @@ gpgv --keyring ./jeffro256-keyring.gpg %{SOURCE5} %{SOURCE4}
 
 %setup -q -n %{name}-source-v%{version}
 %patch 0
-%patch 1
 
 %build
 # enforce minimum CMake version

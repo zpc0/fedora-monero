@@ -5,7 +5,7 @@
 
 Name:		xmrig
 Version:	6.26.0
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	unified CPU miner
 
 License:	GPL-3.0-or-later
@@ -22,6 +22,12 @@ BuildRequires:	gcc-c++
 BuildRequires:	hwloc-devel
 BuildRequires:	libstdc++-static
 BuildRequires:	libuv-static
+# use OpenSSL v3.x for F45+
+%if 0%{?fedora} >= 45
+BuildRequires:	openssl3-devel
+%else
+BuildRequires:	openssl-devel
+%endif
 BuildRequires:	systemd-rpm-macros
 
 %description
@@ -33,7 +39,7 @@ unified CPU/GPU miner
 %patch 0
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DWITH_HTTP=OFF -DWITH_ENV_VARS=OFF -DWITH_OPENCL=OFF -DWITH_CUDA=OFF -DWITH_TLS=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DWITH_HTTP=OFF -DWITH_ENV_VARS=OFF -DWITH_OPENCL=OFF -DWITH_CUDA=OFF
 %cmake_build
 
 %install

@@ -17,7 +17,7 @@ jobs:
       - name: Install RPMLint
         run: sudo dnf install -y rpmlint
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Check Monero spec file
         run: rpmlint monero/monero.spec
       - name: Check P2Pool spec file

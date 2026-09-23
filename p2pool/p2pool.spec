@@ -5,12 +5,12 @@
 %global _pkg_extra_ldflags -Wl,-z,nodlopen -Wl,-z,noexecstack
 
 Name:		p2pool
-Version:	4.18
+Version:	4.18.1
 Release:	1%{?dist}
 Summary:	Decentralized pool for Monero mining
 
 License:	GPL-3.0-only
-URL:		https://p2pool.io
+URL:		https://github.com/SChernykh/%{name}
 Source0:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/%{name}_source-v%{version}.tar.xz
 Source1:	https://github.com/SChernykh/%{name}/releases/download/v%{version}/sha256sums.txt.asc
 Source2:	SChernykh.asc
@@ -51,7 +51,7 @@ fi
 %autosetup -n %{name}
 
 %build
-%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF -DWITH_MERGEMINING_DONATION=OFF
+%cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DWITH_RANDOMX=OFF -DWITH_UPNP=OFF -DWITH_GRPC=OFF -DWITH_TLS=OFF
 %cmake_build
 
 %install
